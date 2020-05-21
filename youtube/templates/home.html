@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="static/good.css">
+</head>
+<body>>
+    <div class="top">
+        <center><h1>🧚🏻‍♀️JIEUN's Favorite YOUTUBE Channel🎥</h1></center>
+    </div>
+    {% for video in videos.all %}
+    <div class = "contatiner">
+        <div class = "box1">
+            <div class = "channel"><p>채널명 : {{video.channel}}</p></div>
+            <div class = "name"><p>크리에이터 : {{video.name}}</p></div>
+            <div class = "sub"><p>구독자 수 : {{video.sub}}명</p></div>
+            <div class = "preference">
+                {%if video.preference == 1 %}<p>⭐️</p>{%endif%}
+                {%if video.preference == 2 %}<p>⭐️⭐️</p>{%endif%}
+                {%if video.preference == 3 %}<p>⭐️⭐️⭐️</p>{%endif%}
+                {%if video.preference == 4 %}<p>⭐️⭐️⭐️⭐️</p>{%endif%}
+                {%if video.preference == 5 %}<p>⭐️⭐️⭐️⭐️⭐️</p>{%endif%}
+            </div>
+            <div class = "livecast">
+                {%if video.livecast == True %}<p class = "livecast_on">Livecast</p>{% endif %}
+                {%if video.livecast == False %}<p class = "livecast_off">Livecast</p>{% endif %}
+            </div>
+        </div>
+        <div class = "box2">
+            <iframe width="32%" height="100%" src="{{video.linkone}}" allowfullscreen></iframe>
+            <iframe width="32%" height="100%" src="{{video.linktwo}}" allowfullscreen></iframe>
+            <iframe width="32%" height="100%" src="{{video.linkthree}}" allowfullscreen></iframe>
+        </div>
+    </div>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,119 @@
+.body{
+    margin:0;
+    background-color: tan;
+}
+
+.container1{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: skyblue;
+    margin-left: 50px;
+    margin-right: 50px;,
+}
+
+.box1{
+    justify-content : center;
+    align-items: center;
+    width: 97%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    border:4px solid purple;
+}
+
+.container{
+    width: 100%;
+    height: 1200px;
+    position: relative;
+}
+
+.box2{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.channel{
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    border:2px solid palevioletred;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.name{
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    border:2px solid palevioletred;
+    border-radius: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.sub{
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    border:2px solid palevioletred;
+    border-radius: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.preference{
+    display: flex;
+    width: 25%;
+    height : 52px;
+    justify-content: center;
+    align-items: center;
+    border:2px solid palevioletred;
+    border-radius: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.livecast{
+    display: flex;
+    width: 25%;
+    height : 52px;
+    justify-content: center;
+    align-items: center;
+    border:2px solid palevioletred;
+    border-radius: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.livecast_on{
+    width: 30%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: yellow;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 200px;
+}
+
+.livecast_off{
+    width: 30%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    color:black;
+    background-color: gray;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 200px;
+}
