@@ -1,0 +1,452 @@
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="static/kje.css">
+</head>
+<body>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="mordalp">🧚🏻Naming Ranking Audition 페이지에 오신 여러분 환영합니다!🧚🏻‍♀️ <br>멋있는 이름을 지어주시고, 상품과 상금 받아가세요~❤️</p>
+    </div>
+  
+  </div>
+
+  <div id="container">
+    <div id="top">
+      <div id="siteName">Naming Ranking Audition</div>
+      <div id="clock"><p id="clockContent"></p></div>
+    </div>
+  
+    <div id="navBar">
+      <ul>
+        <li class="nav"><p>옷</p></li>
+        <li class="nav"><p>애완동물</p></li>
+        <li class="nav"><p>음식, 음료</p></li>
+        <li class="nav"><p>신인 아이돌 그룹</p></li>
+        <li class="nav"><p>기타</p></li>
+      </ul>
+    </div>
+    <div id="list">
+      <form class='search' style="text-align: center;">
+        <button class = "img-button" type="submit" name="click" value="">
+          <i class="fas fa-search"></i>
+        </button>
+  
+        <input class = 'keyword' type='text' name='search' maxlength=255 value="" autocomplete="off">
+        
+        <select class='SelectSearch' name='WhichSearch'>
+          <option id='google' value='google'>Google</option>
+          <option id='naver' value='naver'>Naver</option>
+        </select>
+      </form>
+        <div>
+            <button type="button" id="up">위로</button>
+            <button type="button" id="down">아래로</button>
+        </div>
+        
+        <form name="loginForm" action="http://localhost/login" method="post" style="text-align: right;">
+          ID: <input type="text" name="userId"><br>
+          Password: <input type="password" name="password"><br>
+          <input type="hidden" name="loginType" value="admin">
+          <input type="button" onclick="login()" value="로그인">
+        </form>
+        <div id="box">
+            <div id="image">
+              <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA0MjlfMTQ5%2FMDAxNTg4MTQ4NTc4MDc2.z2pqgMSlXBcG793a3cxpx70gWTRl_Y5QIZxZc9nKjmAg.Lg2vs4Bq1zZuPX2xd5TSErkCzOIFIJgwQDdBKMwNPgAg.JPEG.leesuwhoan3%2F1588148576245.jpg&type=b400" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>안녕하세요! WM엔터테인먼트 신인 걸그룹입니다~ 잘 부탁드려요🙇🏻‍♀️</h2>
+              </div>
+              <div id="text">
+                <p>총 7명으로 구성된 신인 걸그룹입니다!!ㅎㅎ <br>올해 하반기에 데뷔 예정이고, 몽환 + 청순을 주 컨셉으로 잡을 예정입니다~</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇오마이걸🔥</li>
+                <li>🥈나의여신님들</li>
+                <li>🥉사랑해요</li>
+              </ol>
+            </div>
+          </div>
+          <div id="box">
+            <div id="image">
+              <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5133%2F2015%2F06%2F28%2Fart_1435503423_99_20150628235803.jpg&type=b400" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>우리집🏠으로 초대할게</h2>
+              </div>
+              <div id="text">
+                <p>6명의 남성 멤버로 이루어진 신인 보이그룹입니다! <br>'우리집'이라는 타이틀로 데뷔 예정인데...저희 그룹 이름 좀 지어주세요!</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇2PM🔥</li>
+                <li>🥈10분 뒤에 저 앞에서</li>
+                <li>🥉너를 기다리고 있을게</li>
+              </ol>
+            </div>
+          </div>
+          <div id="box">
+            <div id="image">
+              <img src="http://imgnews.naver.net/image/5597/2019/11/19/0000028937_001_20191119143402285.JPG" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>여성 솔로 아티스트로 곧 데뷔합니당~ 예쁜 이름 지어주세요🥺</h2>
+              </div>
+              <div id="text">
+                <p>다양한 장르를 할 예정입니당 <br> 제게 잘 어울리는 이름으로 부탁드려요~</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇아이유🔥</li>
+                <li>🥈Eight🔥</li>
+                <li>🥉Forever we young</li>
+              </ol>
+            </div>
+          </div>
+    </div>
+    <div id="list">
+        <div>
+            <button type="button" id="up">위로</button>
+            <button type="button" id="down">아래로</button>
+        </div>
+        <div id="box">
+            <div id="image">
+              <img src="http://cafefiles.naver.net/MjAxOTExMjdfMzUg/MDAxNTc0ODI1NDc2Mjk2.SLbLhqVlXZsS3OOgwRFJXyRdRlHN7GmRna2TGxomWOYg.YlRSD06j-ivSn1dPJaNYmtmNG45Qa-lMC8MJD3qwJQ8g.JPEG/AOA_%B3%AF_%BA%B8%B7%AF%BF%CD%BF%E4.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>FNC 새로운 걸그룹 데뷔 예정입니다</h2>
+              </div>
+              <div id="text">
+                <p>저희 그룹에 어울리는 이름으로 부탁드려요<br>컨셉은 다양하게 시도할 예정입니다!!</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇AOA🔥</li>
+                <li>🥈날 보러 와요</li>
+                <li>🥉너나 해 cover 레전드</li>
+              </ol>
+            </div>
+          </div>
+          <div id="box">
+            <div id="image">
+              <img src="http://imgnews.naver.net/image/5116/2020/04/02/0000662888_003_20200402095016770.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>신인 걸그룹 강렬한 이름으로 지어주세요!!</h2>
+              </div>
+              <div id="text">
+                <p>강렬하고 독특한 이름이 필요해요!</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇(여자)아이들🔥</li>
+                <li>🥈Oh my god</li>
+                <li>🥉LATATA</li>
+              </ol>
+            </div>
+          </div>
+          <div id="box">
+            <div id="image">
+                <img src="http://blogfiles.naver.net/MjAxOTA2MTBfMTY1/MDAxNTYwMTA0ODU0OTEz.6Y-O1pQNMQogg4saobixuxFqFcCFii4FQBNgJ5TrUrYg.4MkbuEQZEBWGVX6r6NeN5YJhDDfU9XjJDKssDWGswmcg.JPEG.angma2017/IMG_20190610_032506.jpg" alt="">
+              </div>
+              <div id="content">
+                <div id="title">
+                  <h2>장차 월드스타가 될 그룹입니다 하하</h2>
+                </div>
+                <div id="text">
+                  <p>월드투어를 대비해서 글로벌한 이름으로 부탁드려욥</p>
+                </div>
+              </div>
+              <div id="rank">
+                <h3 id="rankTitle">현재 랭킹</h3>
+                <ol>
+                  <li>🥇BTS</li>
+                  <li>🥈작은 것들을 위한 시</li>
+                  <li>🥉ON</li>
+                </ol>
+              </div>
+          </div>
+    </div>
+    <div id="list">
+        <div>
+            <button type="button" id="up">위로</button>
+            <button type="button" id="down">아래로</button>
+        </div>
+        <div id="box">
+            <div id="image">
+              <img src="http://kinimage.naver.net/20160604_41/1465040274286Anbrn_JPEG/bg-pc.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>JYP에서 야심차게 준비한 신인 걸그룹입니다^^</h2>
+              </div>
+              <div id="text">
+                <p>걸그룹 명가 JYP에서 신인 걸그룹이 나옵니다! <br>많은 관심 부탁드려요</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇트와이스</li>
+                <li>🥈Feel Special</li>
+                <li>🥉샤샤샤</li>
+              </ol>
+            </div>
+          </div>
+          <div id="box">
+            <div id="image">
+              <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fpost.phinf.naver.net%2FMjAxOTA3MjlfMTY1%2FMDAxNTY0MzgxMjA5Nzk4.9aFrCB7AgjEHTT4O8EmYl3dkyrIbsNAV01FZ-PSLAgcg.d0BvlVQwF1WBIdZZLwBQ2kBVkNRsZk8r9HQ2h9Rldu0g.JPEG%2FI8-iO09KsSVpSm1NlnWblgToBU9Q.jpg&type=b400" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>안녕하세요 잘 부탁드려요!</h2>
+              </div>
+              <div id="text">
+                <p>기억에 오래 남을 수 있는 이름으로 지어주세요🥺</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇ITZY</li>
+                <li>🥈달라달라</li>
+                <li>🥉Wannabe</li>
+              </ol>
+            </div>
+          </div>
+          <div id="box">
+            <div id="image">
+              <img src="http://post.phinf.naver.net/MjAyMDAxMTBfOTEg/MDAxNTc4NjMzMDA3NzIx.YAA-k1ZYn6JclMqZ1egUrb8FuS8qdD5MDVoN3S5KwqQg.PC1Wcn9Kb8ZB_GlvUvVP4dCSzEl-TS4GQ3GH8_CpDaAg.JPEG/ITR_3vLxROZEGRzOjDFqrwgqjO1w.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>Y*에서 신인 걸그룹이 나옵니다</h2>
+              </div>
+              <div id="text">
+                <p>매력적인 네 멤버로 구성된 걸그룹입니다<br> 잘 부탁드려요</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇블랙핑크🐱</li>
+                <li>🥈뚜두뚜두</li>
+                <li>🥉마지막처럼</li>
+              </ol>
+            </div>
+          </div>
+    </div>
+    <div id=list>
+        <div>
+            <button type="button" id="up">위로</button>
+            <button type="button" id="down">아래로</button>
+        </div>
+        <div id="box">
+            <div id="image">
+              <img src="http://blogfiles.naver.net/MjAyMDAyMTlfMTE2/MDAxNTgyMDY4MjQ1NTcw.Py1OBCmsBG1-dbSFQIZl-eaG3IFH__8POIILa5FY8J0g.KuRZGrYWxQYe8OGx_-xqDRx1AaMCwtLh8zeT5yXqfskg.JPEG.nanabanana__/77e7622ffe87c8ce5cc3a85b039727a6.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>SM에서 드디어 신인이 나옵니다..!!두구두구</h2>
+              </div>
+              <div id="text">
+                <p>다채로운 매력의 다섯 멤버로 구성되어 있습니다 <br> 컨셉을 크게 두가지로 나누어 번갈아가며 활동할 예정이랍니다</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇레드벨벳</li>
+                <li>🥈음파음파</li>
+                <li>🥉빨간맛</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div id="box">
+            <div id="image">
+              <img src="http://imgnews.naver.net/image/5129/2019/12/23/231516686_20191223174439320.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>안녕하세요 잘 부탁드립니다!</h2>
+              </div>
+              <div id="text">
+                <p>저희에게 잘 어울릴만한 이름으로 지어주세요</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇마마무</li>
+                <li>🥈고고베베</li>
+                <li>🥉음오아예</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div id="box">
+            <div id="image">
+              <img src="http://imgnews.naver.net/image/469/2020/04/13/0000486890_001_20200414045732604.jpg" alt="">
+            </div>
+            <div id="content">
+              <div id="title">
+                <h2>DSP 신인입니다^-^</h2>
+              </div>
+              <div id="text">
+                <p>월드스타가 되는 그 날까지 열심히 하겠습니다!🌎💥</p>
+              </div>
+            </div>
+            <div id="rank">
+              <h3 id="rankTitle">현재 랭킹</h3>
+              <ol>
+                <li>🥇에이프릴</li>
+                <li>🥈봄의 나라 이야기</li>
+                <li>🥉숨겨진 띵곡</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</body>
+<script>
+  let modal = document.getElementById("myModal");
+  let span = document.getElementsByClassName("close")[0];
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  let clock = document.querySelector('#clockContent');
+  function getTime(){
+    const time = new Date();
+    const hour = time.getHours();
+    const minutes = time.getMinutes();
+    const seconds = time.getSeconds();
+    clock.innerHTML = `${hour<10 ? `0${hour}`:hour}:${minutes<10 ? `0${minutes}`:minutes}:${seconds<10 ? `0${seconds}`:seconds}`
+  }
+
+  function init(){
+    setInterval(getTime, 1000);
+  }
+
+  init();
+
+  const Searching=Search.prototype;
+
+  function Search(){
+    this.keyword=document.querySelector('input[name = "search"]');
+    this.engine=document.querySelector('.SelectSearch');
+    this.button=document.querySelector('.img-button');
+    this.form=document.querySelector('.search');
+
+    this.Engine();
+  }
+  Searching.Engine=function(){
+    this.form.addEventListener('submit', e=>{
+
+      e.preventDefault();
+
+      let engine=this.engine.value;
+      let keyword=this.keyword.value;
+
+      if(engine=='google'){
+        location.href='http://www.google.co.kr/search?q='+keyword;
+      }else if(engine=='naver'){
+        location.href='http://search.naver.com/search.naver?query='+keyword;
+      }
+    });
+  }
+  new Search();
+
+  function login(){
+    var loginForm = document.loginForm;
+    var userId = loginForm.userId.value;
+    var password = loginForm.password.value;
+
+    if(password == 1111){
+      alert("로그인에 성공하셨습니다!!");
+      return false;
+    }else{
+      alert("로그인에 실패하셨습니다ㅠㅠ");
+      return false;
+    }
+    if(!userId || !password){
+      alert("아이디와 비밀번호를 모두 입력해주세요!");
+      return false;
+    }else{
+      loginForm.submit();
+    }
+  }
+  
+
+  let all = document.querySelectorAll("button");
+  console.log(all);
+  console.log(all[0]);
+  console.log(all[1]);
+  for(let i=0; all.length; i+=1){
+      if(i%2==0){
+          all[i].addEventListener('click',function(){
+              window.scrollBy({left:0, top:900, behavior:'smooth'});
+          })
+      }else{
+          all[i].addEventListener('click',function(){
+              window.scrollBy({left:0, top:-900, behavior:'smooth'})
+          })
+      }
+  }
+
+  window.scrollTo(0,0)  
+  let lastScrollTop = 0;
+  document.addEventListener("scroll", () => {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop){
+      window.scrollBy(0, 2);
+    } else {
+      window.scrollBy(0, -2);
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+    }, false);
+
+  getTime()
+  
+  let nav = document.getElementsByClassName('nav')
+  
+  for (let i=0; i<nav.length; i++) {
+    if (i == 1) {
+      nav[i].addEventListener('click', () => {
+        alert('현재 페이지 입니다')
+      });
+    } else {
+      nav[i].addEventListener('click', () => {
+        alert('준비중인 페이지 입니다')
+    })
+    }
+  };
+</script>
+</html>
