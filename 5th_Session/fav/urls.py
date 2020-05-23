@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from youtube import views
 urlpatterns = [
+    url('detail/<int:detail_id>',views.detail,name='detail'),
     url(r'^admin/', admin.site.urls),
     url('', views.home, name='home'),
 ]

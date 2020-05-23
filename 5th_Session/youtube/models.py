@@ -13,3 +13,6 @@ class Video (models.Model):
     linkone = models.TextField()
     linktwo = models.TextField()
     linkthree = models.TextField()
+    text = models.TextField(max_length=2000)
+    summary = models.TextField(max_length = 200)
+    photo = models.ImageField(upload_to = "image", blank=True)
