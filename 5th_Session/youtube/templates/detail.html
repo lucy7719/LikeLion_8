@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{content.channel}}</p>
+    <p>크리에이터 이름 : <br> {{content.name}}</p>
+    <p>추천 별점 : <br>
+        {% if content.preference == 1 %}⭐️
+        {% elif content.preference == 2 %}⭐️⭐️
+        {% elif content.preference == 3 %}⭐️⭐️⭐️
+        {% elif content.preference == 4 %}⭐️⭐️⭐️⭐️
+        {% else %}⭐️⭐️⭐️⭐️⭐️
+        {% endif %}
+    </p>
+
+    {% if content.livecast == True %}
+    <p>Live now!</p>
+    {% else %}
+    <p>Live now!</p>
+    {% endif %}
+    <p>추천 영상</p>
+    <iframe src="{{video.linkone}}" allowfullscreen></iframe>
+    <iframe src="{{video.linktwo}}" allowfullscreen></iframe>
+    <iframe src="{{video.linkthree}}" allowfullscreen></iframe>
+    <img src = {{content.photo.url}}>
+    <p>"{{content.summary}}"</p>
+    <h2>유튜브 소개 : </h2>
+    <p>{{content.text}}</p>
+</body>
+</html>
