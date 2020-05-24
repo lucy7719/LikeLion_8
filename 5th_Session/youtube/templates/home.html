@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -37,5 +37,6 @@
         </div>
     </div>
     {% endfor %}
+    <a href = "{% url 'new' %}">만들기</a>
 </body>
 </html>
