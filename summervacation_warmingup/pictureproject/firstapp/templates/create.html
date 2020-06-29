@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width:100%;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <p>선정 작품</p>
+        {{form.pic}}
+        <p>작품 이름 : </p>
+        <input type="text" name="name">
+        <p>선정 이유 : </p>
+        <input type="text" name="reason">
+        <p>선정 날짜 : </p>
+        <input type="text" name = "date">
+        <input type = "submit" value="추가하기">
+    </form>
+</body>
+</html>

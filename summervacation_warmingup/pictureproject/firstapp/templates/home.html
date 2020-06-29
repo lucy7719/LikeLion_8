@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="static/one.css">
+</head>
+<body>
+    <div class = "top">
+        <center><h1>Welcome to my Gallery</h1></center>
+    </div>
+    {% for i in home_key.all %}
+    {% if i.pic %}
+    <center><a href="{% url 'detail' i.id %}"><img src ="{{i.pic}}" style="width: 400px;"><br></a></center>
+    {% endif %}
+    {% endfor %}
+    <center><a href="{% url 'create' %}">생성하기</a></center>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'update' update_key.id %}" method="POST">
+        {% csrf_token %}
+        <p>작품 이름 : </p>
+        <input type="text" name="name">
+        <p>선정 이유 : </p>
+        <input type="text" name="reason">
+        <p>선정 날짜 : </p>
+        <input type="text" name="date">
+        <p>선정 작품</p>
+        {{form.photo}}
+        <input type="submit" value="수정하기">
+    </form>
+</body>
+</html>

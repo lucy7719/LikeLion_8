@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width:100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    {{detail_key.name}}<br>
+    {{detail_key.reason}}<br>
+    {{detail_key.date}}<br>
+    <a href="{% url 'update' detail_key.id %}">수정하기</a>
+    <a href="{% url 'delete' detail_key.id %}">삭제하기</a>
+</body>
+</html>
