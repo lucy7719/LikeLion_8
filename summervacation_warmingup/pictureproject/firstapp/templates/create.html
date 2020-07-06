@@ -15,10 +15,10 @@
     </style>
 </head>
 <body>
-    <form action="#" method="POST">
+    <form action="{% url 'create' %}" method="POST">
         {% csrf_token %}
         <p>선정 작품</p>
-        {{form.pic}}
+        <input type = "file" name = "pic">
         <p>작품 이름 : </p>
         <input type="text" name="name">
         <p>선정 이유 : </p>

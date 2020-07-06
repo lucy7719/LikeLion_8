@@ -1,5 +1,10 @@
 from django.db import models
+from django import forms
 from datetime import datetime
+
+class UploadFileForm(forms.Form):
+    titles = forms.CharField(max_length=100)
+    file = forms.FileField()
 
 class photo(models.Model):
     objects = models.Manager()
@@ -8,4 +13,3 @@ class photo(models.Model):
     pic = models.ImageField(upload_to="image", blank=True)
     date = models.DateTimeField(default=datetime.now, blank=True)
 
-# Create your models here.

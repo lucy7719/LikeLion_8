@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import photo
+
 
 def home(request):
     photo_obj = photo.objects
     return render(request, 'home.html',{"home_key":photo_obj})
-# Create your views here.
 
 def detail(request, detail_id):
     detail_obj = get_object_or_404(photo, pk=detail_id)
@@ -13,12 +13,12 @@ def detail(request, detail_id):
 def create(request):
     if request.method == "POST":
         photo_val = photo()
-        photo_val.name = request.POST['name']
-        photo_val.reason = request.POST['reason']
-        photo_val.date = request.POST['date']
-        photo_val.pic = request.FILES['pic']
+        photo_val.name = request.POST.get('name')
+        photo_val.reason = request.POST.get('reason')
+        photo_val.date = request.POST.get('date')
+        photo_val.pic = request.FILES.get('pic')
         photo_val.save()
-        return redirect('home')
+        return redirect(reverse('home'))
     else:
         pass
     return render(request,'create.html')
