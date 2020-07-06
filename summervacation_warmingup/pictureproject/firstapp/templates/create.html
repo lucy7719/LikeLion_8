@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <form action="{% url 'create' %}" method="POST">
+    <form action="{% url 'create' %}" enctype="multipart/form-data" method="POST">
         {% csrf_token %}
         <p>선정 작품</p>
         <input type = "file" name = "pic">

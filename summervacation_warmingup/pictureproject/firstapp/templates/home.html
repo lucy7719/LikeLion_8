@@ -12,7 +12,7 @@
     <form action="{% url 'create' %}" method="POST">
         {% for i in home_key.all %}
         {% if i.pic %}
-        <center><a href="{% url 'detail' i.id %}"><img src ="{{i.name}}" style="width: 400px;"><br></a></center>
+        <center><a href="{% url 'detail' i.id %}"><img src ="{{i.pic.url}}" style="width: 400px;"><br></a></center>
         {% endif %}
         {% endfor %}
     </form>

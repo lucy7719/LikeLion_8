@@ -25,4 +25,3 @@ urlpatterns = [
     path('delete/<int:delete_id>', firstapp.views.delete, name="delete"),
     path('detail/<int:detail_id>', firstapp.views.detail, name="detail"),
 ]
-
