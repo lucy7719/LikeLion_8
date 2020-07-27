@@ -46,22 +46,22 @@ class create(CreateView):
 def result(request):
    BlogPosts = Blog.objects.all()
    query = request.GET.get('query', '')
-   selected = request.GET.get('selected', '')
+   howtoselect = request.GET.get('howtoselect', '')
     
-   if selected=="all":
+   if howtoselect=="all":
        BlogPosts = BlogPosts.filter(Q(title__icontains=query)| Q(text__icontains=query)).order_by('-time')
 
         
-   elif selected=="title":
+   elif howtoselect=="title":
         BlogPosts = BlogPosts.filter(Q(title__icontains=query)).order_by('-time')
 
         
-   elif selected=="text":
+   elif howtoselect=="text":
         BlogPosts = BlogPosts.filter(Q(text__icontains=query)).order_by('-time')
 
         
-   elif selected=="author":
+   elif howtoselect=="author":
         BlogPosts = BlogPosts.filter(Q(author__icontains=query)).order_by('-time')
 
 
-   return render(request, 'result.html', {'BlogPosts':BlogPosts, 'query':query,  'selected':selected})
+   return render(request, 'result.html', {'BlogPosts':BlogPosts, 'query':query,  'howtoselect':howtoselect})
