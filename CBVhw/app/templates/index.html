@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .first{
+        text-align: center;
+        background-color:lightsalmon;
+        display:flex;
+        width:100%;
+        height:90px;
+    }
+    .sitename{
+        height: 80px;
+        width: 33%;
+        color: maroon;
+    }
+    .box{
+        height: 80px;
+        width:33%;
+        top:60%;
+        margin-top: 30px;
+    }
+    .username{
+        height: 45px;
+        width:33%;
+        margin-top: 10px;
+    }
+    .second{
+        text-align: center;
+    }
+    .writenew{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class = first>
+        <div class = sitename>
+            <h1>😗냠냠이들🍎</h1>
+        </div>
+        <div class = box>
+            <form action ="{% url 'result' %}" method='GET'>
+                <input class = "input_box" type="text" name="query" value="{{query}}" placeholder="검색해보자">
+                <select name = "selected">
+                    <option value="all">전체 검색</option>
+                    <option value="title">제목으로 검색</option>
+                    <option value="text">내용으로 검색</option>
+                    <option value="author">글쓴이로 검색</option>
+                </select>
+            </form>
+        </div>
+        <div class = username>
+            <p>{{user}}님 환영합니다!😀</p>
+        </div>
+    </div>
+    <div class = second>
+        {% for i in blog_list %}
+        <a href="{% url 'detail' i.id %}">
+            <h1>글 제목 - {{i.title}}</h1>
+            <h2>내용 - {{i.text}}</h2>
+            <p>글쓴이 : {{i.author}}</p>
+            <p>작성 날짜 : {{i.time}}</p>
+    </a>
+    <br>
+    {% endfor %}
+    </div>
+    <div class="writenew">
+        <a href="{% url 'create' %}">새글쓰기</a>
+    </div>
+</body>
+</html>
