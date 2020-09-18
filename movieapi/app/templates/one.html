@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지은 영화 API 페이지</title>
+    <link rel="shortcut icon" href="#" />
+    <link href="{% static 'CSS/home.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>🎬 ALL ABOUT MOIVE 🎞</h1>
+        </div>
+        <div class="todayDate">
+            <form name="todayDateForm" class="todayDateForm" action="http://127.0.0.1:8000/">
+                <input type="date" name="todayDateInput" class="todayDateInput">
+                <input type="button" onclick="clickedSearchBtn();" value="검색" class="todayDateInput"/>
+            </form>
+        </div>
+    </div>
+    <div style="text-align: center; width: 100%; width: 100%;">
+        <div class="contents" ></div>
+    </div>
+    <script src="{% static 'JS/first.js' %}" type="text/javascript"></script>
+</body>
+</html>
